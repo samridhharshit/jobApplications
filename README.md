@@ -64,15 +64,15 @@ Creates a new company mentioning the profiles offered by them.
 - ***Data Params***
   
   ```
-    {
+  {
     	"id": int,
     	"name": string,
     	"profile": {
     		"fullstack": boolean,
     		"backend": boolean,
     		"frontend": boolean
-    	}
-    }
+     	}
+  }
   ```
   
 - ***Content***: `{<company_object>}`
@@ -120,18 +120,18 @@ Creates a new company mentioning the profiles offered by them.
       
   - ***Data Params***
       
-       ```
-        {
-        	"company_id": int,
-        	"applicant_id": int,
-        	"applicant_name": string,
-        	"profileAppliedFor": {
-        		"fullstack": boolean,
-        		"backend": boolean,
-        		"frontend": boolean
-        	}
-        }
-      ```
+   ```
+   {
+       	"company_id": int,
+       	"applicant_id": int,
+       	"applicant_name": string,
+       	"profileAppliedFor": {
+       		"fullstack": boolean,
+       		"backend": boolean,
+       		"frontend": boolean
+       	}
+   }
+  ```
       
    - ***Content***: `{<applicant_object>}`
    
@@ -140,25 +140,46 @@ Creates a new company mentioning the profiles offered by them.
   Creates new application for different companies for the same user
   - ***URL params***
        
-       None
+     None
        
   - ***Headers*** 
        
-       Content-Type: application/json
+     Content-Type: application/json
         
   - ***Data Params***
         
-       ```
-        {
-          	"company_id": int,
-          	"applicant_id": int,
-          	"applicant_name": string,
-          	"profileAppliedFor": {
-          		"fullstack": boolean,
-          		"backend": boolean,
-          		"frontend": boolean
-          	}
-        }
-      ```
+   ```
+   {
+       "company_id": int,
+       "applicant_id": int,
+       "applicant_name": string,
+       "profileAppliedFor": {
+          	"fullstack": boolean,
+          	"backend": boolean,
+            "frontend": boolean
+       }
+   }
+  ```
         
-   - ***Content***: `{<applicant_object>}`
+  - ***Content***: `{<applicant_object>}`
+
+  ### GET /companiesList/:applicant_id
+  
+  Fetches details of the companies in which the applicant has applied
+  
+  - ***URL params***
+         
+    Required: applicant_id=[integer]
+          
+  - ***Content***: `{<application_object>}`
+   
+  ### GET /applicantsList/:companyId
+  
+  Fetches details of the applicants who have applied for profiles given for a company
+  
+  - ***URL params***
+           
+     Required: applicant_id=[integer]
+            
+  - ***Content***: `{<application_object>}`
+  
