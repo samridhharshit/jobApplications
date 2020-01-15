@@ -38,7 +38,7 @@ Creates a new company mentioning the profiles offered by them.
     ```
    {
         "id": int,
-        "name": "w3dev",
+        "name": string,
         "profile": {
         	"fullstack": boolean,
         	"backend": boolean,
