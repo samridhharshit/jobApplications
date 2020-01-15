@@ -15,3 +15,150 @@ Applicants using the webapp can apply for these profiles offered by the companie
 The webapp shows the number of applicants who have applied for profiles entered by the companies and the number of
  companies in which the applicant has applied 
 
+## E-R diagram
+
+![job_application](https://user-images.githubusercontent.com/39849261/72459689-4e635480-37f1-11ea-93ef-626117ff88e0.png)
+
+## API Contracts
+
+### POST /companyForm
+
+Creates a new company mentioning the profiles offered by them.
+
+- ***URL params***
+
+    None
+
+- ***Headers*** 
+
+    Content-Type: application/json
+ 
+- ***Data Params***
+ 
+    ```
+   {
+        "id": int,
+        "name": "w3dev",
+        "profile": {
+        	"fullstack": boolean,
+        	"backend": boolean,
+        	"frontend": boolean
+        }
+   }
+   ```
+ 
+- ***Content***: `{<company_object>}`
+ 
+ ### PUT /updateCompanyInfo
+ 
+ Updates company info as per their requirements
+ 
+- ***URL params***
+ 
+     None
+ 
+- ***Headers*** 
+ 
+     Content-Type: application/json
+  
+- ***Data Params***
+  
+  ```
+    {
+    	"id": int,
+    	"name": string,
+    	"profile": {
+    		"fullstack": boolean,
+    		"backend": boolean,
+    		"frontend": boolean
+    	}
+    }
+  ```
+  
+- ***Content***: `{<company_object>}`
+ 
+ ### POST /applicantForm
+ 
+ Creates new applicants
+ 
+ - ***URL params***
+  
+      None
+  
+ - ***Headers*** 
+  
+      Content-Type: application/json
+   
+ - ***Data Params***
+   
+    ```
+    {
+     	"company_id": int,
+     	"applicant_id": int,
+     	"applicant_name": string,
+     	"profileAppliedFor": {
+     		"fullstack": boolean,
+     		"backend": boolean,
+     		"frontend": boolean
+     	}
+    }
+   ```
+   
+ - ***Content***: `{<applicant_object>}`
+   
+  ### PUT /updateApplicantForm
+   
+   Updates application as per applicants desire
+    
+  - ***URL params***
+     
+       None
+     
+  - ***Headers*** 
+     
+       Content-Type: application/json
+      
+  - ***Data Params***
+      
+       ```
+        {
+        	"company_id": int,
+        	"applicant_id": int,
+        	"applicant_name": string,
+        	"profileAppliedFor": {
+        		"fullstack": boolean,
+        		"backend": boolean,
+        		"frontend": boolean
+        	}
+        }
+      ```
+      
+   - ***Content***: `{<applicant_object>}`
+   
+  ### POST /newApplication
+  
+  Creates new application for different companies for the same user
+  - ***URL params***
+       
+       None
+       
+  - ***Headers*** 
+       
+       Content-Type: application/json
+        
+  - ***Data Params***
+        
+       ```
+        {
+          	"company_id": int,
+          	"applicant_id": int,
+          	"applicant_name": string,
+          	"profileAppliedFor": {
+          		"fullstack": boolean,
+          		"backend": boolean,
+          		"frontend": boolean
+          	}
+        }
+      ```
+        
+   - ***Content***: `{<applicant_object>}`
