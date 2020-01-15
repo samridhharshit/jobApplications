@@ -1,6 +1,6 @@
-#Job Applications
+# Job Applications
 
-##Synopsis
+## Synopsis
  
 The application enables the user to create, add company and applicant as well as enable the user to update their details
 
